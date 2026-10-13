@@ -19,6 +19,7 @@ data/logs/
 reports/coverage_report.md
 reports/*.json
 reports/local_sources.md
+reports/experimental_followup_*.md
 *.log
 __pycache__/
 *.py[cod]

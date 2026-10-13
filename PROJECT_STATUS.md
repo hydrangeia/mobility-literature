@@ -26,6 +26,8 @@ Continue capped queries and citation expansion; resolve missing bibliographic id
 
 Experimental mobility is now the primary target, with all five material classes progressing together. The first batch targets up to four original research papers per class, prioritizing existing PDF matches and explicit measurement-method cues. Experimental/theoretical labels and material membership are checked against the title and abstract before full-text review.
 
+The first metadata-screened batch contains 20 papers, four per class: 11 have an existing local file, and nine have recorded server paths for retrieval. Three MOF papers lack indexed abstracts and need their measurement methods checked in the full text. The batch is saved as `data/experimental_followup_20261014_v1.csv`, with its working summary in `reports/experimental_followup_20261014_v1.md`.
+
 For each experimental observation, record the material and sample, measured quantity, carrier type, mobility expression and unit, measurement method, temperature, direction, device or sample conditions, and the supporting text with its page/table/figure/SI location. Multiple methods or sample conditions remain separate observations.
 
 Full-text follow-up starts with existing local and remote PDFs, then uses publisher OA links, repository copies and Supporting Information. Additional DOI-based OA lookup, including Unpaywall, is a next-stage extension. Record the document version and source alongside each extracted observation; papers awaiting full text stay in the follow-up queue.
