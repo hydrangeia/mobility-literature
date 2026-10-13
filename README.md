@@ -1,8 +1,10 @@
 # Mobility literature discovery
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 This project builds a traceable discovery and data-completion pipeline for carrier mobility papers across five materials classes: COFs, MOFs, organic small-molecule/molecular semiconductors, hybrid perovskites, and inorganic 2D materials.
 
-The first release prioritizes literature coverage and import of existing extraction results. It does not try to become a full reference manager or infer numerical mobility values from titles or abstracts.
+The first release covers literature discovery, metadata enrichment, deduplication, PDF matching, and import of existing mobility extraction results. See the [v1 run summary](V1_RUN_SUMMARY.md) for the current dataset and follow-up priorities.
 
 Install the command from the project directory with `python -m pip install -e .`.
 
@@ -28,7 +30,7 @@ python -m mobility_literature discover
 
 OpenAlex discovery can run without a key at a lower request budget. Semantic Scholar enrichment is optional when its key is absent. Crossref is queried politely with `CROSSREF_MAILTO` when supplied. Credentials are never written to project files, logs, or cache keys.
 
-The initial `discover` command uses bounded query groups and caches pages. Re-running it resumes incomplete OpenAlex cursors and merges new metadata into the current candidate export by DOI, then by normalized title/year/first author. It does not scan folders for PDFs.
+The initial `discover` command uses bounded query groups and caches pages. Re-running it resumes incomplete OpenAlex cursors and merges new metadata into the current candidate export by DOI, then by normalized title/year/first author.
 
 Optional local inputs are explicit paths:
 
@@ -49,7 +51,7 @@ Audit generated output with `python scripts/audit_outputs.py --root .`. Optional
 
 ## Evidence states
 
-`candidate` → `likely_contains_mobility` → `confirmed_numeric_mobility` → `verified_evidence` are evidence states, not claims that all records have been fully read. A paper reaches `confirmed_numeric_mobility` only when a numerical electron/hole/ambipolar mobility value with unit is explicitly found. `verified_evidence` additionally requires a traceable source location and a reviewed value/context.
+`candidate` → `likely_contains_mobility` → `confirmed_numeric_mobility` → `verified_evidence` track the available evidence. A paper reaches `confirmed_numeric_mobility` when a numerical electron/hole/ambipolar mobility value with unit is explicitly found. `verified_evidence` additionally requires a traceable source location and a reviewed value/context.
 
 Conductivity, ionic/proton mobility, diffusion coefficients, and gas diffusion are not electronic carrier mobility. They may be retained as exclusion notes but cannot advance a record's mobility state.
 
