@@ -21,3 +21,11 @@ The coordinator owns integration, provider orchestration, evidence-state policy 
 ## Next research work
 
 Continue capped queries and citation expansion; resolve missing bibliographic identifiers; review tentative material assignments; and independently check numerical evidence against the original PDFs and SI. Provider throttling, missing units/carriers, OCR audit flags and overlapping corpus paths are reported as remaining gaps. These are research follow-ups beyond the completed runnable v1 setup.
+
+## Research priority — 2026-10-14
+
+Experimental mobility is now the primary target, with all five material classes progressing together. The first batch targets up to four original research papers per class, prioritizing existing PDF matches and explicit measurement-method cues. Experimental/theoretical labels and material membership are checked against the title and abstract before full-text review.
+
+For each experimental observation, record the material and sample, measured quantity, carrier type, mobility expression and unit, measurement method, temperature, direction, device or sample conditions, and the supporting text with its page/table/figure/SI location. Multiple methods or sample conditions remain separate observations.
+
+Full-text follow-up starts with existing local and remote PDFs, then uses publisher OA links, repository copies and Supporting Information. Additional DOI-based OA lookup, including Unpaywall, is a next-stage extension. Record the document version and source alongside each extracted observation; papers awaiting full text stay in the follow-up queue.
